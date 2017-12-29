@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+</head>
+
+<body> 
+
+    <!--Para codificar usa-se % -->
+    <% var texto = "EJS exemplo"; %>
+    
+    <h1>Home 2</h1>
+    <!--Para imprimir valor usa-se %= -->
+    <%= texto %>
+    <ul>
+    <% for(var indice in lstClientes){ %>
+        <li><%= lstClientes[indice].nome %> - <%= lstClientes[indice].email %></li>
+    <% } %>
+    </ul>
+
+<br>
+
+<% if(erros) { %>
+<ul>
+<% for(var chaves in erros) { %>
+<li><%= erros[chaves].msg %></li>
+<% } %>
+</ul>
+<% } %>
+
+<form action="/" method="post">
+     <input type="text" name="nome" placeholder="Nome" value="<%=dados.nome %>">
+     <input type="text" name="email" placeholder="E-mail" value="<%=dados.email %>">
+     <button type="submit">Adicionar</button>
+</form>
+
+</body>
+
+</html>
